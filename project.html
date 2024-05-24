@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('./public/static/alternative/Pretendard-ExtraBold.ttf') format('opentype');
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('./public/static/alternative/Pretendard-Bold.ttf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('./public/static/alternative/Pretendard-Medium.ttf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pretendard';
+            src: url('./public/static/alternative/Pretendard-Light.ttf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header{
+            width: 100vw;
+            background: #F2E9D8;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 250px 60px;
+        }
+        .nav-logo{
+            width: 118px;
+            height: 36px;
+            margin-right: 560px;
+        }
+        .nav-menu {
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000000;
+
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .nav-menu li {
+            margin-left: 25px;
+
+        }
+        .nav-menu li a {
+            line-height: 3;
+            color: #000000;
+            text-decoration: none;
+        }
+        .nav-menu li a:visited {
+            color: #000000;
+        }
+        .download-btn1{
+            margin-left: 25px;
+            width: 140px;
+            height: 50px;
+
+            background: #D97652;
+            border-radius: 40px;
+
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            border: none;
+
+            color: #FFFFFF;
+
+        }
+        .download-btn2{
+            margin-top: 40px;
+            width: 140px;
+            height: 50px;
+
+            background: #D97652;
+            border-radius: 40px;
+
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            border: none;
+
+            color: #FFFFFF;
+
+        }
+        .header_text_image{
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: center; /* 가로 가운데 정렬 */
+        }
+
+        .header_text_image span {
+            margin-right: 20px;
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            color: #000000;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+
+        }
+        .header_text_image span .bold-text1 {
+            margin-bottom: 35px;
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 44px;
+        }
+        .text-area1{
+            margin-bottom: 40px;
+        }
+        .header_text_image img {
+            margin-left: 150px;
+            width: 400px;
+            height: 733px;
+        }
+        .main_text_image{
+            margin-top: 50px;
+            display: flex;
+            align-items: center; /* 수직 가운데 정렬 */
+            justify-content: center; /* 가로 가운데 정렬 */
+        }
+        .main_text_image img {
+            margin-right: 40px;
+            width: 600px;
+            height: 350px;
+            filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.25));
+            border-radius: 30px;
+
+        }
+        .main_text_image span {
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+
+            color: #000000;
+
+        }
+        .main_text_image span .bold-text2{
+            margin-bottom: 30px;
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 35px;
+
+            display: flex;
+            align-items: center;
+            color: #000000;
+        }
+        .dummy_text{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .dummy_text span{
+            margin-bottom: 60px;
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000000;
+            text-align: center;
+
+        }
+        .dummy_text span .bold-text3{
+            margin-bottom: 10px;
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 42px;
+            line-height: 60px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #D97652;
+        }
+        .dummy_text span .highlight{
+            color: #D97652;
+        }
+        .dummy_cat{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* overflow: auto; */
+        }
+        .cat-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .cat-row img {
+            width: 373px;
+            height: 373px;
+
+            filter: drop-shadow(10px 10px 30px rgba(0, 0, 0, 0.25));
+            border-radius: 30px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+        .text_button{
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 70px;
+        }
+        .text_button::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1090px;
+            border-bottom: 1px solid #C4C4C4;
+        }
+        .download-btn3{
+            margin-top: 25px;
+            width: 140px;
+            height: 50px;
+
+            background: #D97652;
+            border-radius: 40px;
+
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            border: none;
+
+            color: #FFFFFF;
+
+        }
+        .text_button span{
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #000000;
+        }
+        .map_name{
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+        .map_name span{
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 45px;
+            align-items: center;
+            color: #000000;
+            display: inline;
+        }
+        .map_name span .light_text{
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 45px;
+            display: flex;
+            align-items: center;
+
+            color: #606367;
+
+        }
+        .empty-box {
+            width: 690px; /* 원하는 너비로 설정 */
+            height: 100px; /* 원하는 높이로 설정 */
+            background-color: transparent; /* 투명한 배경색 설정 */
+            margin: 10px 0; /* 상하 여백 설정 */
+        }
+        .kakao_map{
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .root_daum_roughmap {
+            border-radius: 20px; /* 원하는 모서리 반경 값으로 설정 */
+            overflow: hidden; /* 지도가 컨테이너를 벗어나지 않도록 설정 */
+        }
+        .root_daum_roughmap .wrap_controllers {
+            display: none !important;
+        }
+        .bottom_area{
+            margin-top: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .bottom_area img{
+            width: 1520px;
+            height: 280px;
+            background: linear-gradient(0deg, rgba(242, 233, 216, 0.6), rgba(242, 233, 216, 0.6));
+        }
+        .box {
+            width: 1080px;
+            height: 180px;
+            background: #263140;
+            border-radius: 30px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed; /* 고정 위치 설정 */
+            top: 80%; /* 위쪽에서 50% 떨어진 곳에 위치 */
+            left: 50%; /* 왼쪽에서 50% 떨어진 곳에 위치 */
+            transform: translate(-50%, -50%); /* 박스 자체의 크기만큼 위치 보정 */
+            z-index: 999; /* 다른 요소들 위에 위치하도록 설정 */
+        }
+        .bold_text4{
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 45px;
+            color: #FFFFFF;
+        }
+        .box span{
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 18px;
+            color: #F2E9D8;
+            margin-right: 120px;
+        }
+        .input-container {
+            width: 444px;
+            height: 50px;
+            display: flex;
+            background: #FFFFFF;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 60px;
+            overflow: hidden;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+        .input-container img{
+            /* mail */
+            margin-left: 15px;
+            width: 24px;
+            height: 24px;
+
+        }
+        .input-container input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .input-container button {
+            display: flex;
+            border: none;
+            padding: 15px 29px;
+            background: #D97652;
+            border-radius: 40px;
+
+            font-family: 'Pretendard',sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+
+            text-align: center;
+            color: #FFFFFF;
+
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+    <div class="nav-container">
+        <a href="#" ><img src ="./image/hodu_logo.png" alt="hodu_logo Image" class="nav-logo"></a>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Support</a></li>
+            <li><button class="download-btn1">Download</button></li>
+        </ul>
+    </div>
+    </nav>
+    <section class="header_text_image">
+    <span class="text-area1">
+       <div class="bold-text1">
+            Lorem Ipsum is simply <br>
+            dummy text of the printing and
+        </div>
+        Lorem Ipsum is simply dummy text of the printing and<br>
+        typesetting industry.<br>
+        Lorem Ipsum has been the industry's standard dummy text<br>
+        ever since the 1500s, when an unknown<br>
+    <button class="download-btn2">Download</button></span>
+    <img src ="./image/cat_logo.png" alt="cat_logo Image">
+    </section>
+</header>
+<section class="main_text_image">
+    <img src ="./image/cat_main.png" alt="cat_main Image">
+    <span class="text-area2"><div class="bold-text2">Lorem Ipsum is simply<br>
+        dummy text of the printing<br> and dummy text <br></div>
+    Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry.
+    </span>
+</section>
+<section class="dummy_text">
+    <span><div class="bold-text3">
+    dummy text of the printing and dummy </div><br>
+    Lorem Ipsum is simply<span class="highlight"> dummy text </span>the printing and typesetting industry.<br>
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown</span>
+</section>
+<section class="dummy_cat">
+    <div class="cat-row">
+        <img src="./image/cat1.png" alt="Cat Image">
+        <img src="./image/cat2.png" alt="Cat Image">
+        <img src="./image/cat3.png" alt="Cat Image">
+    </div>
+    <div class="cat-row">
+        <img src="./image/cat4.png" alt="Cat Image">
+        <img src="./image/cat5.png" alt="Cat Image">
+        <img src="./image/cat6.png" alt="Cat Image">
+    </div>
+</section>
+<section class ="text_button">
+    <span>Continue exploring HODU</span>
+    <button class="download-btn3">show more</button>
+</section>
+<section class="map_name">
+    <span>Where you’ll be <br>
+    <div class="light_text">330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</div></span>
+    <div class="empty-box"></div>
+</section>
+<section class="kakao_map">
+    <!-- * 카카오맵 - 지도퍼가기 -->
+    <!-- 1. 지도 노드 -->
+    <div id="daumRoughmapContainer1716385297421" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+    <!--
+        2. 설치 스크립트
+        * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+    -->
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+    <!-- 3. 실행 스크립트 -->
+    <script charset="UTF-8">
+        new daum.roughmap.Lander({
+            "timestamp" : "1716385297421",
+            "key" : "2jevq",
+            "mapWidth" : "1080",
+            "mapHeight" : "400"
+        }).render();
+    </script>
+</section>
+    <div class="box"><span><div class="bold_text4">Subscribe to our Blog post</div>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br>
+            Lorem Ipsum has been the industry's standard dummy text </span>
+        <div class="input-container">
+            <img src ="./image/mail.png" alt="mail Image">
+                <input type="text" placeholder="   Enter your e-mail address">
+            <button type="button">Subscribe</button>
+        </div>
+    </div>
+<section class="bottom_area">
+    <img  src ="./image/footer_cat.png" alt="footer_cat Image">
+</section>
+<footer>footer</footer>
+</body>
+</html>
