@@ -416,8 +416,65 @@
             color: #FFFFFF;
 
         }
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 5%;;
+            right: 2%;;
+            z-index: 99;
+            border: 1px solid #dbdbdb;
+            outline: none;
+            background-color: #f6f6f6;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 100%;
+            align-items: center;
+            justify-content: center;
 
+        }
+        .vector01_image{
+            width: 15px;
+            height: 9px;
+        }
+
+        #scrollTopBtn:hover {
+            background-color: #fafafa; /* 마우스 오버 시 배경색 */
+        }
+        #scrollTopBtn:hover .vector01_image {
+            content: url("./image/vector02.png"); /* 마우스 오버 시 변경할 이미지 경로 */
+        }
+        footer{
+            display: flex;
+            margin-top: 30px;
+            padding-bottom: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+        footer .footer_hodu_logo{
+            margin-right: 680px;
+        }
+        footer div img {
+            display: inline-block; /* 이미지를 인라인 요소로 취급 */
+            margin: 0 10px; /* 이미지 간격 */
+        }
     </style>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("scrollTopBtn").style.display = "block";
+            } else {
+                document.getElementById("scrollTopBtn").style.display = "none";
+            }
+        }
+
+        // 맨 위로 스크롤하는 함수
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+    </script>
 </head>
 <body>
 <header>
@@ -510,9 +567,14 @@
             <button type="button">Subscribe</button>
         </div>
     </div>
+<button onclick="scrollToTop()" id="scrollTopBtn"><img  src ="./image/vector01.png" alt="vector01 Image" class="vector01_image"></button>
 <section class="bottom_area">
     <img  src ="./image/footer_cat.png" alt="footer_cat Image">
 </section>
-<footer>footer</footer>
+<footer> <div class="footer_hodu_logo"><img  src ="./image/hodu_logo.png" alt="hodu_logo Image"></div>
+    <div><img  src ="./image/icon-blog.png" alt="icon-blog Image">
+    <img  src ="./image/icon-facebook.png" alt="icon-facebook Image">
+    <img  src ="./image/icon-insta.png" alt="icon-insta Image">
+    <img  src ="./image/icon-youtube.png" alt="icon-youtube Image"> </div></footer>
 </body>
 </html>
